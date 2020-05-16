@@ -13,6 +13,7 @@ const App = () => {
         <CurrentWeather />
         <ForecastWeather />
       </WeatherContextProvider>
+      <p>By Annika Chauhan</p>
     </section>
   );
 }

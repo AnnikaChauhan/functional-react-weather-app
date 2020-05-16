@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import styles from './DailyDetails.module.scss';
 
 import weatherContext from '../../../../contexts/weatherContext';
 
@@ -6,16 +7,16 @@ const DailyDetails = ({ dailyWeather }) => {
     const { convertKelvinToCelsius } = useContext(weatherContext);
 
     return (
-        <div>
+        <div className={styles.details}>
             <div>
-                <p>It feels like: {convertKelvinToCelsius(dailyWeather.main.feels_like)}&deg;</p>
-                <p>Minimum temperature: {convertKelvinToCelsius(dailyWeather.main.temp_min)}&deg;</p>
-                <p>Maximum temperature: {convertKelvinToCelsius(dailyWeather.main.temp_max)}&deg;</p>
+                <p>Feels like: <span>{convertKelvinToCelsius(dailyWeather.main.feels_like)}&deg;</span></p>
+                <p>Min temperature: <span>{convertKelvinToCelsius(dailyWeather.main.temp_min)}&deg;</span></p>
+                <p>Max temperature: <span>{convertKelvinToCelsius(dailyWeather.main.temp_max)}&deg;</span></p>
             </div>
             <div>
-                <p>Humidity: {dailyWeather.main.humidity}%</p>
-                <p>Wind speed: {dailyWeather.wind.speed}</p>
-                <p>Description: {dailyWeather.weather[0].description}</p>
+                <p>Humidity: <span>{dailyWeather.main.humidity}%</span></p>
+                <p>Wind speed: <span>{dailyWeather.wind.speed}mph</span></p>
+                <p>Description: <span>{dailyWeather.weather[0].description}</span></p>
             </div>
         </div>
     );

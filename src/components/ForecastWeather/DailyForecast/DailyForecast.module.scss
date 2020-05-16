@@ -12,7 +12,7 @@
         article:first-child {
             display: flex;
             justify-content: space-between;
-            width: 50%;
+            width: 60%;
 
             p {
                 font-size: 2.5em;
@@ -23,10 +23,6 @@
         article div img {
             height: 80px;
         }
-    }
-
-    article {
-        background-color: initial;
     }
 }
 

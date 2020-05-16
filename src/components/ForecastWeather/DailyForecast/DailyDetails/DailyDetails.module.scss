@@ -1,0 +1,42 @@
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10px;
+    padding: 10px 0;
+    border-top: 2px solid darkgreen;
+
+    div {
+        text-align: left;
+        width: 50%;
+        padding: 0 5px;
+
+        &:first-child{
+            text-align: right;
+            border-right: 1px solid whitesmoke;
+        }
+
+        p {
+            font-size: 0.8em;
+            color: grey;
+            padding: 3px 0;
+
+            span {
+                font-style: italic;
+                font-size: 1.1em;
+                text-transform: lowercase;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .details div{
+        p {
+            font-size: 1em;
+
+            span {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
