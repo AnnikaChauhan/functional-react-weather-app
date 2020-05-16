@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid lightgrey;
     margin: 0 10px;
 
     form {
@@ -22,7 +22,7 @@
         input[type='text'] {
             margin-right: 5px;
             width: 60%;
-            font-size: 35px;
+            font-size: 2.3em;
             color: grey;
         }
 
@@ -31,7 +31,7 @@
             background-color: grey;
             color: white;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 1em;
 
             &:hover {
                 background-color: darkgreen;
@@ -40,7 +40,7 @@
     }
 
     p {
-        font-size: 40px;
+        font-size: 2.7em;
         font-weight: bold;
     }
 }

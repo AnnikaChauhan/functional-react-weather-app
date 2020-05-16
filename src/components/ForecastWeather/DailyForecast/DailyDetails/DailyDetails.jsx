@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
 import weatherContext from '../../../../contexts/weatherContext';
 
-const DailyDetails = () => {
-    const { forecastWeather } = useContext(weatherContext);
+const DailyDetails = ({ dailyWeather }) => {
+    console.log(dailyWeather);
 
     return ( 
         <p>Details</p>

@@ -24,7 +24,9 @@ export const WeatherContextProvider = (props) => {
             })
             .then(([resC, resF]) => {
                 setCurrentWeather(resC);
-                setForecastWeather(resF);
+                setForecastWeather(resF.list.filter(item => {
+                    return resF.list.indexOf(item)%8 === 0;
+                }));
             })
             .catch(error => {console.log(error)});
     };

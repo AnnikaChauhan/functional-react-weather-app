@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 
 import WeatherContext from '../../contexts/weatherContext';
 
@@ -10,7 +10,14 @@ const ForecastWeather = () => {
     return ( 
         <div>
             <p>This Weeks Forecast...</p>
-            <DailyForecast />
+            <small>Click on each to see more detail.</small>
+            {
+                forecastWeather
+                ? forecastWeather.map((daily, index) => {
+                    return <DailyForecast dailyWeather={daily} key={index} />
+                })
+                : <></>
+            }
         </div>
      );
 }
