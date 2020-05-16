@@ -1,3 +1,11 @@
+# Weather App
+
+This app was built using the functional React principles like Hooks and pairing this with Context to create an application. This is based on my self teaching of the subjects hooks and context after the course. This application allows you to see the current weather and the weather forecast in a city of your choice - the default is set to London but can be changed using the input field. You can see more information about the weather forecast by clicking on the daily forecast.
+
+As this is a React application, all external libraries will need to be installed on clone. This can be done with 'yarn install'.
+
+This app is available [here](https://annikachauhan.github.io/functional-react-weather-app/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
