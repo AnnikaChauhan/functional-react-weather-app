@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import styles from './DailyForecast.module.scss';
 
 import weatherContext from '../../../contexts/weatherContext';
 
@@ -23,13 +24,20 @@ const DailyForecast = ({ dailyWeather }) => {
     }
 
     return (
-        <div>
-            <div onClick={openDetails}>
-                <p>{utcToDay(dailyWeather.dt)}</p>
-                <p>{convertKelvinToCelsius(dailyWeather.main.temp)}</p>
-            </div>
+        <section onClick={openDetails} className={styles.daily}>
+            <section>
+                <article>
+                    <p>{utcToDay(dailyWeather.dt)}</p>
+                    <p>{convertKelvinToCelsius(dailyWeather.main.temp)}&deg;</p>
+                </article>
+                <article>
+                    <div>
+                        <img src={`http://openweathermap.org/img/wn/${dailyWeather.weather[0].icon}@2x.png`} alt={dailyWeather.weather[0].description} />
+                    </div>
+                </article>
+            </section>
             {detail}
-        </div>
+        </section>
     );
 }
 

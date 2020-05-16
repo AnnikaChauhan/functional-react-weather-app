@@ -16,7 +16,7 @@ const CurrentWeather = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
             <form>
                 <input type='text' value={city} onChange={handleChange} placeholder='Search City' />
                 <input type='submit' value='Go' onClick={handleSubmit}/>
@@ -26,7 +26,7 @@ const CurrentWeather = () => {
                 ? <p>{convertKelvinToCelsius(currentWeather.main.temp)}&deg;</p>
                 : <p></p>
             }
-        </div>
+        </section>
 
     );
 }

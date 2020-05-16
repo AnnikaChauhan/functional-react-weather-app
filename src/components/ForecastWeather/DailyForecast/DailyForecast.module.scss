@@ -1,0 +1,37 @@
+.daily {
+    margin: 20px;
+    background-color: gainsboro;
+    border-radius: 5px;
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        article:first-child {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+
+            p {
+                font-size: 2.5em;
+                font-weight: bold;
+            }
+        }
+
+        article div img {
+            height: 80px;
+        }
+    }
+
+    article {
+        background-color: initial;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .daily section article:first-child {
+        width: 30%;
+    }
+}
