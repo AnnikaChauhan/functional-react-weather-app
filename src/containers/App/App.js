@@ -9,13 +9,10 @@ import ForecastWeather from '../../components/ForecastWeather';
 const App = () => {
   return (
     <div className={styles.App}>
-      <h1>Weather App</h1>
       <WeatherContextProvider>
         <CurrentWeather />
         <ForecastWeather />
       </WeatherContextProvider>
-
-
     </div>
   );
 }

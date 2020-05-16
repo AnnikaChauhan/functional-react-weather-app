@@ -1,26 +1,33 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import WeatherContext from '../../contexts/weatherContext';
 
 const CurrentWeather = () => {
-    const weatherContext = useContext(WeatherContext);
+    const {city, setCity, fetchWeather, currentWeather, convertKelvinToCelsius} = useContext(WeatherContext);
 
     const handleChange = (e) => {
-        weatherContext.setCity(e.target.value);
-        console.log(weatherContext.city);
+        setCity(e.target.value);
     }
 
-    // useEffect(weatherContext.fetchWeather, []);
-    console.log(weatherContext);
-
-    //handleSubmit to refetch
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetchWeather();
+    }
 
     return (
         <div>
-            <input type='text' value={weatherContext.city} onChange={handleChange} placeholder='Search City' />
-            <p>Current Weather in {weatherContext.city}</p>
+            <form>
+                <input type='text' value={city} onChange={handleChange} placeholder='Search City' />
+                <input type='submit' value='Go' onClick={handleSubmit}/>
+            </form>
+            {
+                currentWeather
+                ? <p>{convertKelvinToCelsius(currentWeather.main.temp)}°</p>
+                : <p></p>
+            }
+
         </div>
-        
+
     );
 }
 
