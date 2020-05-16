@@ -15,18 +15,24 @@ export const WeatherContextProvider = (props) => {
     };
 
     const fetchWeather = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`)
-            .then(response => response.json())
-            .then(data => {
-                setCurrentWeather(data);
+        const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
+        const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${appid}`;
+
+        Promise.all([fetch(currentWeatherURL), fetch(forecastWeatherURL)])
+            .then(([resC, resF]) => {
+                return Promise.all([resC.json(), resF.json()]);
             })
-            .catch(error => console.log(error));
+            .then(([resC, resF]) => {
+                setCurrentWeather(resC);
+                setForecastWeather(resF);
+            })
+            .catch(error => {console.log(error)});
     };
 
     useEffect(fetchWeather, []);
 
     return ( 
-        <WeatherContext.Provider value={{city, setCity, currentWeather, convertKelvinToCelsius, fetchWeather}}>
+        <WeatherContext.Provider value={{city, setCity, currentWeather, forecastWeather, convertKelvinToCelsius, fetchWeather}}>
             {props.children}
         </WeatherContext.Provider>
      );   

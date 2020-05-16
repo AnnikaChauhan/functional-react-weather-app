@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    border-bottom: 1px solid grey;
+    margin: 0 10px;
+
+    form {
+        height: 50%;
+        width: 70%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+
+        input {
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            height: 100%;
+        }
+
+        input[type='text'] {
+            margin-right: 5px;
+            width: 60%;
+            font-size: 35px;
+            color: grey;
+        }
+
+        input[type='submit']{
+            width: 20%;
+            background-color: grey;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+
+            &:hover {
+                background-color: darkgreen;
+            }
+        }
+    }
+
+    p {
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .container form {
+        width: 55%;
+
+        input[type='submit']{
+            width: 10%;
+        }
+    }
+}

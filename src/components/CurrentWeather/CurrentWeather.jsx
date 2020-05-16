@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import styles from './CurrentWeather.module.scss';
 
 import WeatherContext from '../../contexts/weatherContext';
 
@@ -15,17 +16,16 @@ const CurrentWeather = () => {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <form>
                 <input type='text' value={city} onChange={handleChange} placeholder='Search City' />
                 <input type='submit' value='Go' onClick={handleSubmit}/>
             </form>
             {
                 currentWeather
-                ? <p>{convertKelvinToCelsius(currentWeather.main.temp)}°</p>
+                ? <p>{convertKelvinToCelsius(currentWeather.main.temp)}&deg;</p>
                 : <p></p>
             }
-
         </div>
 
     );
